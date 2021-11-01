@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class Electoral_ProcessDto {
 	
 	private int roundNum;
-	private int votePerNom;
+	private int votePerNom; //revisar 
+	private int idMunicipality;
 	private ArrayList<NominatedDto> NominatedDto;
 	private MunicipalityDto MunicipalityDto;
 	private ArrayList<VoterDto> delegate;
@@ -27,6 +28,12 @@ public class Electoral_ProcessDto {
 	}
 	public void setNominatedDto(ArrayList<NominatedDto> nominatedDto) {
 		NominatedDto = nominatedDto;
+	}
+	public void setIdMunicipality(int idMunicipality) {
+		this.idMunicipality = idMunicipality;
+	}
+	public int getIdMunicipality() {
+		return idMunicipality;
 	}
 	public int getRoundNum() {
 		return roundNum;

@@ -10,7 +10,14 @@ public class PartDto {
 	private int quanDeleted;
 	private int quanAd;
 	private int total;
-	
+	private int processE;
+
+	public int getProcessE() {
+		return processE;
+	}
+	public void setProcessE(int processE) {
+		this.processE = processE;
+	}
 	public Date getDate() {
 		return date;
 	}

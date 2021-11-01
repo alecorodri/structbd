@@ -1,20 +1,30 @@
 package dto;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 public class CDRDto {
 	
 	private int codCDR;
 	private String namCDR;
-	private String nam_presidentCDR;
-	private ArrayList<VoterDto> VoterDto;
+	private int id_presidentCDR;
+	private int id_college;
+	//private ArrayList<VoterDto> VoterDto;
 	
-	public ArrayList<VoterDto> getVoterDto() {
-		return VoterDto;
+	// public ArrayList<VoterDto> getVoterDto() {
+	// 	return VoterDto;
+	// }
+	// public void setVoterDto(ArrayList<VoterDto> voterDto) {
+	// 	VoterDto = voterDto;
+	// }
+
+	public void setId_college( int id_college) {
+		this.id_college = id_college;
 	}
-	public void setVoterDto(ArrayList<VoterDto> voterDto) {
-		VoterDto = voterDto;
+
+	public int getId_college() {
+		return this.id_college;
 	}
+
 	public int getCodCDR() {
 		return codCDR;
 	}
@@ -27,11 +37,11 @@ public class CDRDto {
 	public void setNamCDR(String namCDR) {
 		this.namCDR = namCDR;
 	}
-	public String getNam_presidentCDR() {
-		return nam_presidentCDR;
+	public int getId_presidentCDR() {
+		return id_presidentCDR;
 	}
-	public void setNam_presidentCDR(String nam_presidentCDR) {
-		this.nam_presidentCDR = nam_presidentCDR;
+	public void setNam_presidentCDR(int id_presidentCDR) {
+		this.id_presidentCDR = id_presidentCDR;
 	}
 	
 }

@@ -8,7 +8,30 @@ public class VoterDto {
 	private String namVot;
 	private String adrVot;
 	private Date dateVot;
+	private int cdr;
+	private boolean vote;
+	private String cause;
+
+
 	
+	public String getCause() {
+		return cause;
+	}
+	public void setCause(String cause) {
+		this.cause = cause;
+	}
+	public boolean isVote() {
+		return vote;
+	}
+	public void setVote(boolean vote) {
+		this.vote = vote;
+	}
+	public int getCdr() {
+		return cdr;
+	}
+	public void setCdr(int cdr) {
+		this.cdr = cdr;
+	}
 	public int getNumID() {
 		return numID;
 	}

@@ -4,9 +4,10 @@ import java.util.ArrayList;
 
 public class Electoral_CollegeDto {
 	
-	private int codElec;
+	private int codElec; 
 	private String namElec;
 	private String adrElec;
+	private int id_district;
 	private ArrayList<CDRDto> CDRDto;
 	private ArrayList<AuxVoterDto> AuxVoterDto;
 	private ArrayList<PartDto> PartDto;
@@ -28,6 +29,12 @@ public class Electoral_CollegeDto {
 	}
 	public void setCDRDto(ArrayList<CDRDto> cDRDto) {
 		CDRDto = cDRDto;
+	}
+	public void setIdDistrict(int idDistrict) {
+		this.id_district = idDistrict;
+	}
+	public int getIdDistrict() {
+		return id_district;
 	}
 	public int getCodElec() {
 		return codElec;
