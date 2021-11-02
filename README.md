@@ -1,6 +1,6 @@
 # Proceso Electoral 📊
 
-_Este proyecto permite gestionar el proceso elctral co todos sus factores_
+_Este proyecto permite gestionar el proceso electral co todos sus factores_
 
 ## Comenzando 🚀
 
