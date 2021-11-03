@@ -5,8 +5,8 @@ _Proyecto de Base de Datos de los estudiantes Alejandro Lopez Rodriguez y Carlos
 
 
 ## Comenzando 🚀
-_DB ✅_
-_Conexiones 🏗️_
+ * DB ✅
+ * Conexiones 🏗️
 
 
 
