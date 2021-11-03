@@ -1,8 +1,12 @@
 # Proceso Electoral 📊
 
-_Este proyecto permite gestionar el proceso electral co todos sus factores_
+_Este proyecto permite gestionar el proceso electral de los municipios_
+_Proyecto de Base de Datos de los estudiantes Alejandro Lopez Rodriguez y Carlos Daniel Tellez Perez_
+
 
 ## Comenzando 🚀
+_DB ✅_
+_Conexiones 🏗️_
 
 
 
@@ -11,10 +15,6 @@ _Este proyecto permite gestionar el proceso electral co todos sus factores_
 * Base de Datos - PostgresSQL
 * Interfaz - JavaFX
 * Code - Java
-
-## Versionado 📌
-
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
 
 
 ## Autores ✒️
