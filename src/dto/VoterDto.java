@@ -6,14 +6,26 @@ public class VoterDto {
 	
 	private int numID;
 	private String namVot;
-	private String adrVot;
-	private Date dateVot;
+	private String adressVot;
+	private Date birthdayVot;
 	private int cdr;
 	private boolean vote;
 	private String cause;
 
-
-	
+	public VoterDto() {
+		super();
+	}
+	public VoterDto(int numID, String namVot, String adressVot,
+			Date birthdayVot, int cdr, boolean vote, String cause) {
+		super();
+		this.numID = numID;
+		this.namVot = namVot;
+		this.adressVot = adressVot;
+		this.birthdayVot = birthdayVot;
+		this.cdr = cdr;
+		this.vote = vote;
+		this.cause = cause;
+	}
 	public String getCause() {
 		return cause;
 	}
@@ -45,17 +57,15 @@ public class VoterDto {
 		this.namVot = namVot;
 	}
 	public String getAdrVot() {
-		return adrVot;
+		return adressVot;
 	}
 	public void setAdrVot(String adrVot) {
-		this.adrVot = adrVot;
+		this.adressVot = adrVot;
 	}
 	public Date getDateVot() {
-		return dateVot;
+		return birthdayVot;
 	}
 	public void setDateVot(Date dateVot) {
-		this.dateVot = dateVot;
+		this.birthdayVot = dateVot;
 	}
-	
-
 }

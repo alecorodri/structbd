@@ -6,7 +6,7 @@ _Proyecto de Base de Datos de los estudiantes Alejandro Lopez Rodriguez y Carlos
 
 ## Comenzando 🚀
  * DB ✅
- * Conexiones 🏗️
+ * Conexiones ✅
  * Interfaz 🏗️
 
 
@@ -14,7 +14,7 @@ _Proyecto de Base de Datos de los estudiantes Alejandro Lopez Rodriguez y Carlos
 ## Construido con 🛠️
 
 * Base de Datos - PostgresSQL
-* Interfaz - JavaFX
+* Interfaz - JavaSwin
 * Code - Java
 
 

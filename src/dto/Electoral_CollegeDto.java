@@ -1,58 +1,45 @@
 package dto;
 
-import java.util.ArrayList;
-
 public class Electoral_CollegeDto {
 	
-	private int codElec; 
-	private String namElec;
-	private String adrElec;
+	private int codCollege; 
+	private String nameCollege;
+	private String adress;
 	private int id_district;
-	private ArrayList<CDRDto> CDRDto;
-	private ArrayList<AuxVoterDto> AuxVoterDto;
-	private ArrayList<PartDto> PartDto;
-		
-	public ArrayList<AuxVoterDto> getAuxVoterDto() {
-		return AuxVoterDto;
+	
+	public Electoral_CollegeDto() {
+		super();
 	}
-	public void setAuxVoterDto(ArrayList<AuxVoterDto> auxVoterDto) {
-		AuxVoterDto = auxVoterDto;
+	public Electoral_CollegeDto(int codCollege, String nameCollege,
+			String adress, int id_district) {
+		super();
+		this.codCollege = codCollege;
+		this.nameCollege = nameCollege;
+		this.adress = adress;
+		this.id_district = id_district;
 	}
-	public ArrayList<PartDto> getPartDto() {
-		return PartDto;
+	public int getCodCollege() {
+		return codCollege;
 	}
-	public void setPartDto(ArrayList<PartDto> partDto) {
-		PartDto = partDto;
+	public void setCodCollege(int codCollege) {
+		this.codCollege = codCollege;
 	}
-	public ArrayList<CDRDto> getCDRDto() {
-		return CDRDto;
+	public String getNameCollege() {
+		return nameCollege;
 	}
-	public void setCDRDto(ArrayList<CDRDto> cDRDto) {
-		CDRDto = cDRDto;
+	public void setNameCollege(String nameCollege) {
+		this.nameCollege = nameCollege;
 	}
-	public void setIdDistrict(int idDistrict) {
-		this.id_district = idDistrict;
+	public String getAdress() {
+		return adress;
 	}
-	public int getIdDistrict() {
+	public void setAdress(String adress) {
+		this.adress = adress;
+	}
+	public int getId_district() {
 		return id_district;
 	}
-	public int getCodElec() {
-		return codElec;
+	public void setId_district(int id_district) {
+		this.id_district = id_district;
 	}
-	public void setCodElec(int codElec) {
-		this.codElec = codElec;
-	}
-	public String getNamElec() {
-		return namElec;
-	}
-	public void setNamElec(String namElec) {
-		this.namElec = namElec;
-	}
-	public String getAdrElec() {
-		return adrElec;
-	}
-	public void setAdrElec(String adrElec) {
-		this.adrElec = adrElec;
-	}
-	
 }

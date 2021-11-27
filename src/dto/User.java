@@ -5,8 +5,19 @@ public class User {
     private int idUser;
     private String name;
     private String password;
+    
+    public User() {
+		super();
+	}
 
-    public int getIdUser() {
+	public User(int idUser, String name, String password) {
+		super();
+		this.idUser = idUser;
+		this.name = name;
+		this.password = password;
+	}
+
+	public int getIdUser() {
         return this.idUser;
     }
 
@@ -29,6 +40,4 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
-
 } 

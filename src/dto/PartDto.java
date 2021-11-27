@@ -12,6 +12,20 @@ public class PartDto {
 	private int total;
 	private int processE;
 
+	public PartDto() {
+		super();
+	}
+	public PartDto(Date date, int partID, int quanElect, int quanDeleted,
+			int quanAd, int total, int processE) {
+		super();
+		this.date = date;
+		this.partID = partID;
+		this.quanElect = quanElect;
+		this.quanDeleted = quanDeleted;
+		this.quanAd = quanAd;
+		this.total = total;
+		this.processE = processE;
+	}
 	public int getProcessE() {
 		return processE;
 	}

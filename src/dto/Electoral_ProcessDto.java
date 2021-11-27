@@ -1,33 +1,26 @@
 package dto;
 
-import java.util.ArrayList;
-
 public class Electoral_ProcessDto {
 	
 	private int roundNum;
-	private int votePerNom; //revisar 
+	private int id_EProcess; 
 	private int idMunicipality;
-	private ArrayList<NominatedDto> NominatedDto;
-	private MunicipalityDto MunicipalityDto;
-	private ArrayList<VoterDto> delegate;
 
-	public MunicipalityDto getMunicipalityDto() {
-		return MunicipalityDto;
+	public Electoral_ProcessDto() {
+		super();
 	}
-	public void setMunicipalityDto(MunicipalityDto municipalityDto) {
-		MunicipalityDto = municipalityDto;
+	public Electoral_ProcessDto(int roundNum, int id_EProcess,
+			int idMunicipality) {
+		super();
+		this.roundNum = roundNum;
+		this.id_EProcess = id_EProcess;
+		this.idMunicipality = idMunicipality;
 	}
-	public ArrayList<VoterDto> getDelegate() {
-		return delegate;
+	public int getId_EProcess() {
+		return id_EProcess;
 	}
-	public void setDelegate(ArrayList<VoterDto> delegate) {
-		this.delegate = delegate;
-	}
-	public ArrayList<NominatedDto> getNominatedDto() {
-		return NominatedDto;
-	}
-	public void setNominatedDto(ArrayList<NominatedDto> nominatedDto) {
-		NominatedDto = nominatedDto;
+	public void setId_EProcess(int id_EProcess) {
+		this.id_EProcess = id_EProcess;
 	}
 	public void setIdMunicipality(int idMunicipality) {
 		this.idMunicipality = idMunicipality;
@@ -41,11 +34,4 @@ public class Electoral_ProcessDto {
 	public void setRoundNum(int roundNum) {
 		this.roundNum = roundNum;
 	}
-	public int getVotePerNom() {
-		return votePerNom;
-	}
-	public void setVotePerNom(int votePerNom) {
-		this.votePerNom = votePerNom;
-	}
-
 }

@@ -12,19 +12,23 @@ public class NominatedDto extends VoterDto{
 	private int processE;
 	private int cantVotes;
 
-	// public NominatedDto(String ocupNomi, String profeNomi, String phoneNomi, String intgRNomi, String biogDataNomi,
-	// 		int idVoter, int processE, int cantVotes) {
-	// 	this.ocupNomi = ocupNomi;
-	// 	this.profeNomi = profeNomi;
-	// 	this.phoneNomi = phoneNomi;
-	// 	this.intgRNomi = intgRNomi;
-	// 	this.biogDataNomi = biogDataNomi;
-	// 	this.idVoter = idVoter;
-	// 	this.processE = processE;
-	// 	this.cantVotes = cantVotes;
-	// }
-	
-
+	public NominatedDto() {
+		super();
+	}
+	public NominatedDto(String ocupNomi, String profeNomi, String phoneNomi,
+			String intgRNomi, String biogDataNomi, int idNominated,
+			int idVoter, int processE, int cantVotes) {
+		super();
+		this.ocupNomi = ocupNomi;
+		this.profeNomi = profeNomi;
+		this.phoneNomi = phoneNomi;
+		this.intgRNomi = intgRNomi;
+		this.biogDataNomi = biogDataNomi;
+		this.idNominated = idNominated;
+		this.idVoter = idVoter;
+		this.processE = processE;
+		this.cantVotes = cantVotes;
+	}
 	public int getIdNominated() {
 		return idNominated;
 	}
