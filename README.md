@@ -2,19 +2,24 @@
 
 _Este proyecto permite gestionar el proceso electral de los municipios_
 _Proyecto de Base de Datos de los estudiantes Alejandro Lopez Rodriguez y Carlos Daniel Tellez Perez_
+_Facultad de Ingenieria Informatica, CUJAE_
 
 
 ## Comenzando 🚀
  * DB ✅
- * Conexiones 🏗️
- * Interfaz 🏗️
+ * Conexiones ✅
+ * Interfaz ✅
 
+
+## Deploy
+ * Cargar en PostgreSQL backup que se encuentra en src/backup/ElectoralProcess.backup
+ * Ejecutar Login.java
+ * Establecer la conexion con la BD en la pantalla de Conexion Manual
 
 
 ## Construido con 🛠️
-
 * Base de Datos - PostgresSQL
-* Interfaz - JavaFX
+* Interfaz - JavaSwing
 * Code - Java
 
 

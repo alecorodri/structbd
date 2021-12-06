@@ -1,21 +1,20 @@
 package dto;
 
-import java.util.ArrayList;
-
 public class DistrictDto {
 	
 	private int codDis;
 	private String namDis;
 	private int idMunicipality;
-	private ArrayList<Electoral_CollegeDto> Electoral_CollegeDto;
 	
-	public ArrayList<Electoral_CollegeDto> getElectoral_CollegeDto() {
-		return Electoral_CollegeDto;
+	public DistrictDto(int codDis, String namDis, int idMunicipality) {
+		super();
+		this.codDis = codDis;
+		this.namDis = namDis;
+		this.idMunicipality = idMunicipality;
 	}
-	public void setElectoral_CollegeDto(
-			ArrayList<Electoral_CollegeDto> electoral_CollegeDto) {
-		Electoral_CollegeDto = electoral_CollegeDto;
-	}	
+	public DistrictDto() {
+		super();
+	}
 	public void setIdMunicipality(int idMunicipality) {
 		this.idMunicipality = idMunicipality;
 	}

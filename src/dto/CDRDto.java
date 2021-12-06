@@ -8,14 +8,18 @@ public class CDRDto {
 	private String namCDR;
 	private int id_presidentCDR;
 	private int id_college;
-	//private ArrayList<VoterDto> VoterDto;
-	
-	// public ArrayList<VoterDto> getVoterDto() {
-	// 	return VoterDto;
-	// }
-	// public void setVoterDto(ArrayList<VoterDto> voterDto) {
-	// 	VoterDto = voterDto;
-	// }
+
+	public CDRDto(int codCDR, String namCDR, int id_presidentCDR, int id_college) {
+		super();
+		this.codCDR = codCDR;
+		this.namCDR = namCDR;
+		this.id_presidentCDR = id_presidentCDR;
+		this.id_college = id_college;
+	}
+
+	public CDRDto() {
+		super();
+	}
 
 	public void setId_college( int id_college) {
 		this.id_college = id_college;

@@ -27,7 +27,6 @@ public class Connection_DB {
 		if(connection != null){
 			return connection;
 		}
-		
 		return null;
 	}
 	

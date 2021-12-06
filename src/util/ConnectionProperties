@@ -1,0 +1,4 @@
+Host:localhost
+DataBase:ElectoralProcess
+User:postgres
+Password:123
