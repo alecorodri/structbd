@@ -20,7 +20,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+<<<<<<< HEAD
+=======
 import javax.swing.JTextField;
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 import javax.swing.ListSelectionModel;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.border.EmptyBorder;
@@ -31,7 +34,10 @@ import javax.swing.table.DefaultTableModel;
 import dto.MunicipalityDto;
 import services.MunicipalityService;
 import util.LoadTable;
+<<<<<<< HEAD
+=======
 import util.TextPrompt;
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 
 @SuppressWarnings("serial")
 public class MunicipalityList extends JDialog {
@@ -39,8 +45,11 @@ public class MunicipalityList extends JDialog {
 	private final JPanel contentPanel = new JPanel();
 	private JTable table;
 	private DefaultTableModel date;
+<<<<<<< HEAD
+=======
 	private JTextField find;
 	private JButton clean;
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 	private JButton add_mun;
 	private JButton delete_mun;
 	private JLabel refresh;
@@ -81,7 +90,11 @@ public class MunicipalityList extends JDialog {
 		scrollPane.setEnabled(false);
 		scrollPane.setViewportBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+<<<<<<< HEAD
+		scrollPane.setBounds(37, 21, 486, 281);
+=======
 		scrollPane.setBounds(37, 76, 262, 266);
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 		contentPanel.add(scrollPane);
 
 		table = new JTable();
@@ -114,6 +127,8 @@ public class MunicipalityList extends JDialog {
 		scrollPane.setColumnHeaderView(table);
 		scrollPane.setViewportView(this.table);
 		
+<<<<<<< HEAD
+=======
 		JLabel find_picture = new JLabel("");
 		find_picture.setIcon(new ImageIcon(UserList.class.getResource("/resources/icons8_Search_32.png")));
 		find_picture.setBounds(20, 11, 37, 46);
@@ -140,6 +155,7 @@ public class MunicipalityList extends JDialog {
 		clean.setBounds(360, 21, 170, 31);
 		contentPanel.add(clean);
 		
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 		add_mun = new JButton("Nuevo Municipio");
 		add_mun.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -179,7 +195,11 @@ public class MunicipalityList extends JDialog {
 		add_mun.setBorder(new LineBorder(new Color(140, 145, 168), 5, true));
 		add_mun.setBackground(new Color(73, 78, 107));
 		add_mun.setAlignmentX(0.5f);
+<<<<<<< HEAD
+		add_mun.setBounds(17, 316, 170, 31);
+=======
 		add_mun.setBounds(360, 143, 170, 31);
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 		contentPanel.add(add_mun);
 		
 		delete_mun = new JButton("Eliminar Municipio");
@@ -211,7 +231,11 @@ public class MunicipalityList extends JDialog {
 		delete_mun.setBorder(new LineBorder(new Color(140, 145, 168), 5, true));
 		delete_mun.setBackground(new Color(140, 145, 168));
 		delete_mun.setAlignmentX(0.5f);
+<<<<<<< HEAD
+		delete_mun.setBounds(391, 316, 170, 31);
+=======
 		delete_mun.setBounds(360, 255, 170, 31);
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 		contentPanel.add(delete_mun);
 		
 		LoadTable.Load_Municipality(date, table);
@@ -230,7 +254,11 @@ public class MunicipalityList extends JDialog {
 			}
 		});
 		refresh.setIcon(new ImageIcon(UserList.class.getResource("/resources/icons8_Synchronize_32.png")));
+<<<<<<< HEAD
+		refresh.setBounds(524, 267, 37, 38);
+=======
 		refresh.setBounds(301, 304, 37, 38);
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 		contentPanel.add(refresh);
 		
 		update_mun = new JButton("Modificar Municipio");
@@ -277,7 +305,11 @@ public class MunicipalityList extends JDialog {
 		update_mun.setBorder(new LineBorder(new Color(140, 145, 168), 5, true));
 		update_mun.setBackground(new Color(140, 145, 168));
 		update_mun.setAlignmentX(0.5f);
+<<<<<<< HEAD
+		update_mun.setBounds(204, 316, 170, 31);
+=======
 		update_mun.setBounds(360, 199, 170, 31);
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 		contentPanel.add(update_mun);
 		
 		JLabel fondo = new JLabel("");

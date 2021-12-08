@@ -20,7 +20,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+<<<<<<< HEAD
+=======
 import javax.swing.JTextField;
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 import javax.swing.ListSelectionModel;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.border.EmptyBorder;
@@ -30,7 +33,10 @@ import javax.swing.table.DefaultTableModel;
 
 import services.DistrictService;
 import util.LoadTable;
+<<<<<<< HEAD
+=======
 import util.TextPrompt;
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 import dto.DistrictDto;
 
 @SuppressWarnings("serial")
@@ -39,8 +45,11 @@ public class DistrictList extends JDialog {
 	private final JPanel contentPanel = new JPanel();
 	private JTable table;
 	private DefaultTableModel date;
+<<<<<<< HEAD
+=======
 	private JTextField find;
 	private JButton clean;
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 	private JButton add_dist;
 	private JButton delete_dist;
 	private JLabel refresh;
@@ -82,7 +91,11 @@ public class DistrictList extends JDialog {
 		scrollPane.setEnabled(false);
 		scrollPane.setViewportBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+<<<<<<< HEAD
+		scrollPane.setBounds(20, 23, 292, 319);
+=======
 		scrollPane.setBounds(20, 76, 292, 266);
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 		contentPanel.add(scrollPane);
 
 		table = new JTable();
@@ -115,6 +128,8 @@ public class DistrictList extends JDialog {
 		scrollPane.setColumnHeaderView(table);
 		scrollPane.setViewportView(this.table);
 		
+<<<<<<< HEAD
+=======
 		JLabel find_picture = new JLabel("");
 		find_picture.setIcon(new ImageIcon(UserList.class.getResource("/resources/icons8_Search_32.png")));
 		find_picture.setBounds(20, 11, 37, 46);
@@ -141,6 +156,7 @@ public class DistrictList extends JDialog {
 		clean.setBounds(342, 21, 225, 31);
 		contentPanel.add(clean);
 		
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 		add_dist = new JButton("Nueva Circunscripci\u00F3n");
 		add_dist.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

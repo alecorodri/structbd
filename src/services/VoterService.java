@@ -8,6 +8,14 @@ import java.util.ArrayList;
 
 import dto.VoterDto;
 
+<<<<<<< HEAD
+public class VoterService {
+	
+	public static String createVoter(String name, Timestamp dateVot, String adrVoter, int cdr) throws SQLException{
+		String mistake = null;
+		try{
+			String sqlSentenc = "{call public.create_voter(?,?,?,?)}";
+=======
 
 
 public class VoterService {
@@ -16,13 +24,18 @@ public class VoterService {
 		String mistake = null;
 		try{
 			String sqlSentenc = "{call public.create_voter(?,?,?,?,?,?)}";
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 			CallableStatement cs = ServiceConnection.getConnection().prepareCall(sqlSentenc);
 			cs.setString(1,name);
 			cs.setTimestamp(2,dateVot);
 			cs.setString(3,adrVoter);
+<<<<<<< HEAD
+			cs.setInt(4,cdr);
+=======
 			cs.setString(4,cause);
 			cs.setInt(5,cdr);
 			cs.setBoolean(5,vote);
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 			cs.execute();
 			cs.close();
 		}catch(Exception e){
@@ -34,15 +47,26 @@ public class VoterService {
 	public static String updateVoter(VoterDto voter) throws SQLException{
 		String mistake = null;
 		try{
+<<<<<<< HEAD
+			String sqlSentenc = "{call public.update(?,?,?,?,?,?,?)}";
+=======
 			String sqlSentenc = "{call public.update_voter(?,?,?,?,?,?,?)}";
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 			CallableStatement cs = ServiceConnection.getConnection().prepareCall(sqlSentenc);
 			cs.setString(1,voter.getNamVot());
 			cs.setTimestamp(2,voter.getDateVot());
 			cs.setString(3,voter.getAdrVot());
+<<<<<<< HEAD
+			cs.setInt(6,voter.getVote());
+			cs.setString(4,voter.getCause());
+			cs.setInt(5,voter.getCdr());
+			cs.setInt(7,voter.getNumID());
+=======
 			cs.setBoolean(4,voter.isVote());
 			cs.setString(5,voter.getCause());
 			cs.setInt(6,voter.getCdr());
 			cs.setInt(8,voter.getNumID());
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 			cs.execute();
 			cs.close();
 		}catch(Exception e){
@@ -68,7 +92,11 @@ public class VoterService {
 		try{
 			ResultSet rs = ServiceConnection.getConnection().createStatement().executeQuery("SELECT * FROM voter");
 			while(rs.next()){
+<<<<<<< HEAD
+				VoterDto voter = new VoterDto(rs.getInt("id_voter"), rs.getString("name"), rs.getTimestamp("date_vot"), rs.getString("adr_voter"), rs.getInt("cdr"), rs.getInt("vote"), rs.getString("cause"));
+=======
 				VoterDto voter = new VoterDto(rs.getInt("id_voter"), rs.getString("name"), rs.getString("adr_vot"), rs.getTimestamp("date_vot"), rs.getInt("cdr"), rs.getBoolean("vote"), rs.getString("cause"));
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 				list.add(voter);
 			}
 		}catch (Exception e){
@@ -85,7 +113,11 @@ public class VoterService {
 			cs.setString(1, name);
 			ResultSet rs = cs.executeQuery();
 			if(rs.next()){
+<<<<<<< HEAD
+				voter = new VoterDto(rs.getInt("id_voter"), rs.getString("name"),rs.getTimestamp("date_vot"), rs.getString("adr_voter"), rs.getInt("cdr"), rs.getInt("vote"), rs.getString("cause"));
+=======
 				voter = new VoterDto(rs.getInt("id_voter"), rs.getString("name"), rs.getString("adr_vot"), rs.getTimestamp("date_vot"), rs.getInt("cdr"), rs.getBoolean("vote"), rs.getString("cause"));
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 			}
 		}catch (Exception e){
 			System.out.println("Error: " + e.getMessage());
@@ -101,7 +133,11 @@ public class VoterService {
 			cs.setInt(1, id);
 			ResultSet rs = cs.executeQuery();
 			if(rs.next()){
+<<<<<<< HEAD
+				voter = new VoterDto(rs.getInt("id_voter"), rs.getString("name"), rs.getTimestamp("date_vot"),rs.getString("adr_voter"), rs.getInt("cdr"), rs.getInt("vote"), rs.getString("cause"));
+=======
 				voter = new VoterDto(rs.getInt("id_voter"), rs.getString("name"), rs.getString("adr_vot"), rs.getTimestamp("date_vot"), rs.getInt("cdr"), rs.getBoolean("vote"), rs.getString("cause"));
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 			}
 		}catch (Exception e){
 			System.out.println("Error: " + e.getMessage());

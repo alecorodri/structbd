@@ -20,15 +20,21 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.MatteBorder;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+<<<<<<< HEAD
+=======
 import javax.swing.JTextField;
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
 
 import dto.User;
 import services.UserService;
 import util.LoadTable;
+<<<<<<< HEAD
+=======
 import util.TextPrompt;
 
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
@@ -40,8 +46,11 @@ public class UserList extends JDialog {
 	private final JPanel contentPanel = new JPanel();
 	private JTable table;
 	private DefaultTableModel date;
+<<<<<<< HEAD
+=======
 	private JTextField find;
 	private JButton clean;
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 	private JButton add_user;
 	private JButton delete_user;
 	private JLabel refresh;
@@ -67,11 +76,18 @@ public class UserList extends JDialog {
 	public UserList(User u) throws SQLException {
 		uss = u;
 		setModal(true);
+<<<<<<< HEAD
+		setIconImage(Toolkit.getDefaultToolkit().getImage(UserList.class.getResource("/resources/icons8_Conference_16.png")));
+		setTitle("Usuarios del Sistema");
+		setResizable(false);
+		setBounds(170, 170, 503, 399);
+=======
 		setAlwaysOnTop(true);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(UserList.class.getResource("/resources/icons8_Conference_16.png")));
 		setTitle("Usuarios del Sistema");
 		setResizable(false);
 		setBounds(170, 170, 586, 399);
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 		setBackground(new Color(238, 242, 236));
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(new Color(238, 242, 236));
@@ -83,7 +99,11 @@ public class UserList extends JDialog {
 		scrollPane.setEnabled(false);
 		scrollPane.setViewportBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+<<<<<<< HEAD
+		scrollPane.setBounds(23, 21, 276, 321);
+=======
 		scrollPane.setBounds(37, 76, 262, 266);
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 		contentPanel.add(scrollPane);
 
 		table = new JTable();
@@ -115,6 +135,8 @@ public class UserList extends JDialog {
 		scrollPane.setColumnHeaderView(table);
 		scrollPane.setViewportView(this.table);
 		
+<<<<<<< HEAD
+=======
 		JLabel find_picture = new JLabel("");
 		find_picture.setIcon(new ImageIcon(UserList.class.getResource("/resources/icons8_Search_32.png")));
 		find_picture.setBounds(20, 11, 37, 46);
@@ -141,6 +163,7 @@ public class UserList extends JDialog {
 		clean.setBounds(360, 21, 170, 31);
 		contentPanel.add(clean);
 		
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 		add_user = new JButton("Nuevo Usuario");
 		add_user.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -154,7 +177,11 @@ public class UserList extends JDialog {
 		add_user.setBorder(new LineBorder(new Color(140, 145, 168), 5, true));
 		add_user.setBackground(new Color(73, 78, 107));
 		add_user.setAlignmentX(0.5f);
+<<<<<<< HEAD
+		add_user.setBounds(315, 126, 170, 31);
+=======
 		add_user.setBounds(360, 183, 170, 31);
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 		contentPanel.add(add_user);
 		
 		delete_user = new JButton("Eliminar Usuario");
@@ -184,7 +211,11 @@ public class UserList extends JDialog {
 		delete_user.setBorder(new LineBorder(new Color(140, 145, 168), 5, true));
 		delete_user.setBackground(new Color(140, 145, 168));
 		delete_user.setAlignmentX(0.5f);
+<<<<<<< HEAD
+		delete_user.setBounds(315, 184, 170, 31);
+=======
 		delete_user.setBounds(360, 241, 170, 31);
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 		contentPanel.add(delete_user);
 		
 		LoadTable.Load_User(date, table, uss);

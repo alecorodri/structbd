@@ -7,7 +7,6 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
 
 import java.awt.Toolkit;
@@ -15,8 +14,8 @@ import java.awt.Toolkit;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import services.UserService;
-import util.Encrypt;
+import services.CdrService;
+import services.CollegeService;
 import util.TextPrompt;
 
 import java.awt.Font;
@@ -28,27 +27,33 @@ import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+import javax.swing.JComboBox;
+
+import dto.Electoral_CollegeDto;
+
 @SuppressWarnings("serial")
-public class NewUser extends JDialog {
+public class NewCDR extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	private JTextField name_user;
-	private JPasswordField pass;
-	private JLabel lblNombreDelUsuario;
-	private JLabel lblContraseaDelUsuario;
+	private JTextField name_cdr;
+	private JLabel lblNombreDelCDR;
 	private JButton cancel_button;
 	private JButton ok_button;
 	private JLabel fondo;
+	private JLabel lblColegio;
+	@SuppressWarnings("rawtypes")
+	private JComboBox comboBox;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
 		try {
-			NewUser dialog = new NewUser();
+			NewCDR dialog = new NewCDR();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -58,13 +63,15 @@ public class NewUser extends JDialog {
 
 	/**
 	 * Create the dialog.
+	 * @throws SQLException 
 	 */
-	public NewUser() {
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public NewCDR() throws SQLException {
 		setType(Type.POPUP);
 		setModal(true);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(NewUser.class.getResource("/resources/icons8_Add_User_Male_16.png")));
-		setTitle("Nuevo Usuario");
-		setBounds(170, 170, 431, 228);
+		setIconImage(Toolkit.getDefaultToolkit().getImage(NewCDR.class.getResource("/resources/icons8_Marker_16.png")));
+		setTitle("Nuevo CDR");
+		setBounds(170, 170, 450, 226);
 		getContentPane().setLayout(new BorderLayout());
 		setResizable(false);
 		setBackground(new Color(238, 242, 236));
@@ -73,93 +80,90 @@ public class NewUser extends JDialog {
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
-		
-		name_user = new JTextField();
-		name_user.addKeyListener(new KeyAdapter() {
+
+		name_cdr = new JTextField();
+		name_cdr.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent arg0) {
 				char c = arg0.getKeyChar();
 				if(c == KeyEvent.VK_ENTER){
-					name_user.setFocusable(false);
+					name_cdr.setFocusable(false);
 				}
-				name_user.setFocusable(true);
+				name_cdr.setFocusable(true);
 			}
 		});
-		TextPrompt name_userHelp = new TextPrompt("ej:Maria", name_user);
-		name_userHelp.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		name_user.setFont(new Font("Segoe UI Symbol", Font.BOLD, 18));
-		name_user.setColumns(10);
-		name_user.setBounds(166, 33, 237, 23);
-		contentPanel.add(name_user);
-		
-		pass = new JPasswordField();
-		pass.addKeyListener(new KeyAdapter() {
-			@Override
-			public void keyPressed(KeyEvent arg0) {
-				char c = arg0.getKeyChar();
-				if(c == KeyEvent.VK_ENTER){
-					pass.setFocusable(false);
-					ok_button.doClick();
-				}
-				pass.setFocusable(true);
-			}
-		});
-		TextPrompt passHelp = new TextPrompt("ej:Maria03", pass);
-		passHelp.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		pass.setFont(new Font("Segoe UI Symbol", Font.BOLD, 18));
-		pass.setColumns(10);
-		pass.setEchoChar('*');
-		pass.setBounds(166, 91, 237, 23);
-		contentPanel.add(pass);
-		
-		lblNombreDelUsuario = new JLabel("Nombre:");
-		lblNombreDelUsuario.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblNombreDelUsuario.setForeground(new Color(17, 24, 63));
-		lblNombreDelUsuario.setFont(new Font("Segoe UI Symbol", Font.BOLD, 24));
-		lblNombreDelUsuario.setBounds(10, 24, 146, 37);
-		contentPanel.add(lblNombreDelUsuario);
-		
-		lblContraseaDelUsuario = new JLabel("Contrase\u00F1a:");
-		lblContraseaDelUsuario.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblContraseaDelUsuario.setForeground(new Color(17, 24, 63));
-		lblContraseaDelUsuario.setFont(new Font("Segoe UI Symbol", Font.BOLD, 24));
-		lblContraseaDelUsuario.setBounds(10, 82, 146, 37);
-		contentPanel.add(lblContraseaDelUsuario);
-		
+		TextPrompt nameCDR = new TextPrompt("ej: Antonio Maceo", name_cdr);
+		nameCDR.setForeground(Color.LIGHT_GRAY);
+		nameCDR.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		name_cdr.setFont(new Font("Segoe UI Symbol", Font.BOLD, 18));
+		name_cdr.setColumns(10);
+		name_cdr.setBounds(166, 33, 237, 23);
+		contentPanel.add(name_cdr);
+
+		lblNombreDelCDR = new JLabel("Nombre:");
+		lblNombreDelCDR.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNombreDelCDR.setForeground(new Color(17, 24, 63));
+		lblNombreDelCDR.setFont(new Font("Segoe UI Symbol", Font.BOLD, 24));
+		lblNombreDelCDR.setBounds(10, 24, 146, 37);
+		contentPanel.add(lblNombreDelCDR);
+
 		cancel_button = new JButton("Cancelar");
 		cancel_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				NewUser.this.setVisible(false);
+				NewCDR.this.setVisible(false);
 			}
 		});
+
+		lblColegio = new JLabel("Colegio:");
+		lblColegio.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblColegio.setForeground(new Color(17, 24, 63));
+		lblColegio.setFont(new Font("Segoe UI Symbol", Font.BOLD, 24));
+		lblColegio.setBounds(10, 80, 146, 37);
+		contentPanel.add(lblColegio);
+
+		comboBox = new JComboBox();
+		comboBox.setForeground(Color.DARK_GRAY);
+		comboBox.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
+		comboBox.setBounds(166, 89, 237, 23);
+		contentPanel.add(comboBox);
 		cancel_button.setForeground(Color.WHITE);
 		cancel_button.setFont(new Font("Segoe UI Symbol", Font.BOLD, 16));
 		cancel_button.setBorderPainted(false);
 		cancel_button.setBorder(new LineBorder(new Color(140, 145, 168), 5, true));
 		cancel_button.setBackground(new Color(140, 145, 168));
-		cancel_button.setBounds(166, 146, 91, 31);
+		cancel_button.setBounds(312, 139, 91, 31);
 		contentPanel.add(cancel_button);
-		
+		ArrayList<Electoral_CollegeDto> colegios = CollegeService.getVoters();
+		for(int i = 0; i < colegios.size(); i++){
+			comboBox.addItem(colegios.get(i).getNameCollege());
+		}
+
 		ok_button = new JButton("Aceptar");
 		ok_button.addActionListener(new ActionListener() {
-			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent arg0) {
-				if(name_user.getText().isEmpty() || pass.getText().isEmpty()){
-					JOptionPane.showMessageDialog(NewUser.this,"Complete todos los campos antes de continuar.","CAMPOS VACÍOS",0);
+
+				if(name_cdr.getText().isEmpty()){
+					JOptionPane.showMessageDialog(NewCDR.this,"Complete todos los campos antes de continuar.","CAMPOS VACÍOS",0);
 				}else{
 					String e = null;
+					Electoral_CollegeDto d = null;
 					try {
-						e = UserService.create_User(name_user.getText(), Encrypt.getMd5(pass.getText()));
+						d = CollegeService.find_by_Name((String) comboBox.getSelectedItem());
+					} catch (SQLException e2) {
+						// TODO Auto-generated catch block
+						e2.printStackTrace();
+					}
+					try {
+						e = CdrService.create_CDR(name_cdr.getText(), d.getCodCollege());
 					} catch (SQLException e1) {
 						System.out.println("Error: " + e1.getMessage());
 					}
 					if(e!=null){
-						JOptionPane.showMessageDialog(NewUser.this,e,"ERROR",0);
-						name_user.setText("");
-						pass.setText("");
+						JOptionPane.showMessageDialog(NewCDR.this,e,"ERROR",0);
+						name_cdr.setText("");
 					}else{
-						JOptionPane.showMessageDialog(NewUser.this,"Usuario creado correctamente.","ACCIÓN COMPLETADA",1);
-						NewUser.this.setVisible(false);
+						JOptionPane.showMessageDialog(NewCDR.this,"CDR creado correctamente.","ACCIÓN COMPLETADA",1);
+						NewCDR.this.setVisible(false);
 					}
 				}
 			}
@@ -170,13 +174,13 @@ public class NewUser extends JDialog {
 		ok_button.setBorder(new LineBorder(new Color(140, 145, 168), 5, true));
 		ok_button.setBackground(new Color(73, 78, 107));
 		ok_button.setAlignmentX(0.5f);
-		ok_button.setBounds(312, 146, 91, 31);
+		ok_button.setBounds(166, 139, 91, 31);
 		contentPanel.add(ok_button);
-		
+
 		fondo = new JLabel("");
 		fondo.setIcon(new ImageIcon(NewUser.class.getResource("/resources/Morado.png")));
 		fondo.setBounds(0, -26, 542, 276);
 		contentPanel.add(fondo);
-	}
 
+	}
 }

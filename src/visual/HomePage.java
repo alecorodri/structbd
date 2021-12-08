@@ -26,9 +26,18 @@ import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.sql.SQLException;
+<<<<<<< HEAD
+
 import javax.swing.JLabel;
 
 import dto.User;
+import reports.NoVoters;
+import reports.RepeatDistrict;
+=======
+import javax.swing.JLabel;
+
+import dto.User;
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 import services.UserService;
 import util.Encrypt;
 
@@ -41,10 +50,15 @@ public class HomePage {
 	private JFrame frmSistema;
 	private JMenuItem change_pass;
 	private JMenuItem usss;
+<<<<<<< HEAD
+	private JMenuItem close;
+	private JLabel photo;
+=======
 	private JMenuItem trace;
 	private JMenuItem close;
 	private JLabel photo;
 	private JLabel help;
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 
 	/**
 	 * Launch the application.
@@ -57,6 +71,10 @@ public class HomePage {
 					window.frmSistema.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
+<<<<<<< HEAD
+					
+=======
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 				}
 			}
 		});
@@ -101,11 +119,14 @@ public class HomePage {
 		photo.setBounds(65, 11, 426, 321);
 		frmSistema.getContentPane().add(photo);
 		
+<<<<<<< HEAD
+=======
 		help = new JLabel("");
 		help.setIcon(new ImageIcon(HomePage.class.getResource("/resources/icons8_Help_32.png")));
 		help.setBounds(541, 292, 39, 51);
 		frmSistema.getContentPane().add(help);
 		
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 		JMenuBar menuBar = new JMenuBar();
 		frmSistema.setJMenuBar(menuBar);
 		menuBar.setBackground(new Color(140, 145, 168));
@@ -167,6 +188,8 @@ public class HomePage {
 		usss.setBackground(new Color(238, 242, 236));
 		mnNewMenu.add(usss);
 		
+<<<<<<< HEAD
+=======
 		trace = new JMenuItem("Historial de usuarios");
 		trace.setIcon(new ImageIcon(HomePage.class.getResource("/resources/icons8_Brochure_16.png")));
 		trace.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_H, InputEvent.ALT_MASK));
@@ -175,6 +198,7 @@ public class HomePage {
 		trace.setBackground(new Color(238, 242, 236));
 		mnNewMenu.add(trace);
 		
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 		close = new JMenuItem("Cerrar sesi\u00F3n");
 		close.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -199,6 +223,21 @@ public class HomePage {
 		menuBar.add(mnProcesoElectoral);
 		
 		JMenuItem mntmListaDeProcesos = new JMenuItem("Procesos activos");
+<<<<<<< HEAD
+		mntmListaDeProcesos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ElectoralProcess e = null;
+				try {
+					e = new ElectoralProcess();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				e.setVisible(true);
+			}
+		});
+=======
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 		mntmListaDeProcesos.setIcon(new ImageIcon(HomePage.class.getResource("/resources/icons8_Brochure_16.png")));
 		mntmListaDeProcesos.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P, InputEvent.SHIFT_MASK));
 		mntmListaDeProcesos.setForeground(new Color(17, 24, 63));
@@ -247,6 +286,22 @@ public class HomePage {
 		mnProcesoElectoral.add(mntmCircunscripcin);
 		
 		JMenuItem mntmCdrs = new JMenuItem("Colegios electorales");
+<<<<<<< HEAD
+		mntmCdrs.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ElectoralCollegeList e = null;
+				try {
+					e = new ElectoralCollegeList();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				e.setVisible(true);
+			}
+		
+		});
+=======
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 		mntmCdrs.setIcon(new ImageIcon(HomePage.class.getResource("/resources/icons8_Classroom_16.png")));
 		mntmCdrs.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_E, InputEvent.SHIFT_MASK));
 		mntmCdrs.setForeground(new Color(17, 24, 63));
@@ -255,6 +310,21 @@ public class HomePage {
 		mnProcesoElectoral.add(mntmCdrs);
 		
 		JMenuItem mntmCdr = new JMenuItem("CDR");
+<<<<<<< HEAD
+		mntmCdr.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				CDRList c = null;
+				try {
+					c = new CDRList();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				c.setVisible(true);
+			}
+		});
+=======
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 		mntmCdr.setIcon(new ImageIcon(HomePage.class.getResource("/resources/icons8_Marker_16.png")));
 		mntmCdr.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, InputEvent.ALT_MASK));
 		mntmCdr.setForeground(new Color(17, 24, 63));
@@ -270,6 +340,21 @@ public class HomePage {
 		mnProcesoElectoral.add(mnVotantes);
 		
 		JMenuItem mntmElectores = new JMenuItem("Electores");
+<<<<<<< HEAD
+		mntmElectores.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ElectorList ee = null;
+				try {
+					ee = new ElectorList();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				ee.setVisible(true);
+			}
+		});
+=======
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 		mntmElectores.setIcon(new ImageIcon(HomePage.class.getResource("/resources/icons8_People_16.png")));
 		mntmElectores.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_E, InputEvent.SHIFT_MASK | InputEvent.META_MASK));
 		mntmElectores.setForeground(Color.WHITE);
@@ -278,11 +363,113 @@ public class HomePage {
 		mnVotantes.add(mntmElectores);
 		
 		JMenuItem mntmNominados = new JMenuItem("Nominados");
+<<<<<<< HEAD
+		mntmNominados.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Nominated nn = null;
+				try {
+					nn = new Nominated();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				nn.setVisible(true);
+			}
+		});
+=======
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 		mntmNominados.setIcon(new ImageIcon(HomePage.class.getResource("/resources/icons8_Businessman_16.png")));
 		mntmNominados.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.SHIFT_MASK | InputEvent.META_MASK));
 		mntmNominados.setForeground(Color.WHITE);
 		mntmNominados.setFont(new Font("Segoe UI Symbol", Font.BOLD, 14));
 		mntmNominados.setBackground(new Color(140, 145, 168));
 		mnVotantes.add(mntmNominados);
+<<<<<<< HEAD
+		
+		JMenu mnReportes = new JMenu("Reportes");
+		mnReportes.setForeground(Color.WHITE);
+		mnReportes.setFont(new Font("Segoe UI Symbol", Font.BOLD, 18));
+		mnReportes.setBackground(new Color(140, 145, 168));
+		menuBar.add(mnReportes);
+		
+		JMenuItem mntmDeLosProcesos = new JMenuItem("Partes de los procesos activos");
+		mntmDeLosProcesos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				PartList p = null;
+				try {
+					p = new PartList();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				p.setVisible(true);
+			}
+		});
+		mntmDeLosProcesos.setIcon(new ImageIcon(HomePage.class.getResource("/resources/icons8_Brochure_16.png")));
+		mntmDeLosProcesos.setForeground(new Color(17, 24, 63));
+		mntmDeLosProcesos.setFont(new Font("Segoe UI Symbol", Font.BOLD, 14));
+		mntmDeLosProcesos.setBackground(new Color(238, 242, 236));
+		mnReportes.add(mntmDeLosProcesos);
+		
+		JMenuItem mntmMunicipiosConMs = new JMenuItem("Municipios con m\u00E1s nominados");
+		mntmMunicipiosConMs.setIcon(new ImageIcon(HomePage.class.getResource("/resources/icons8_User_Groups_16.png")));
+		mntmMunicipiosConMs.setForeground(new Color(17, 24, 63));
+		mntmMunicipiosConMs.setFont(new Font("Segoe UI Symbol", Font.BOLD, 14));
+		mntmMunicipiosConMs.setBackground(new Color(238, 242, 236));
+		mnReportes.add(mntmMunicipiosConMs);
+		
+		JMenuItem mntmProcesosFinalizados = new JMenuItem("Procesos finalizados");
+		mntmProcesosFinalizados.setIcon(new ImageIcon(HomePage.class.getResource("/resources/icons8_True_False_16.png")));
+		mntmProcesosFinalizados.setForeground(new Color(17, 24, 63));
+		mntmProcesosFinalizados.setFont(new Font("Segoe UI Symbol", Font.BOLD, 14));
+		mntmProcesosFinalizados.setBackground(new Color(238, 242, 236));
+		mnReportes.add(mntmProcesosFinalizados);
+		
+		JMenuItem mntmCircunscripcionesConMs = new JMenuItem("Circunscripciones con otra vuelta");
+		mntmCircunscripcionesConMs.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				RepeatDistrict rr = null;
+				try {
+					rr = new RepeatDistrict();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				rr.setVisible(true);
+			}
+		});
+		mntmCircunscripcionesConMs.setIcon(new ImageIcon(HomePage.class.getResource("/resources/icons8_Map_Pinpoint_16.png")));
+		mntmCircunscripcionesConMs.setForeground(new Color(17, 24, 63));
+		mntmCircunscripcionesConMs.setFont(new Font("Segoe UI Symbol", Font.BOLD, 14));
+		mntmCircunscripcionesConMs.setBackground(new Color(238, 242, 236));
+		mnReportes.add(mntmCircunscripcionesConMs);
+		
+		JMenuItem mntmElectoresQueNo = new JMenuItem("Electores que no votaron");
+		mntmElectoresQueNo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				NoVoters v = null;
+				try {
+					v = new NoVoters();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				v.setVisible(true);
+			}
+		});
+		mntmElectoresQueNo.setIcon(new ImageIcon(HomePage.class.getResource("/resources/icons8_Conference_16.png")));
+		mntmElectoresQueNo.setForeground(new Color(17, 24, 63));
+		mntmElectoresQueNo.setFont(new Font("Segoe UI Symbol", Font.BOLD, 14));
+		mntmElectoresQueNo.setBackground(new Color(238, 242, 236));
+		mnReportes.add(mntmElectoresQueNo);
+		
+		JMenuItem mntmDelegadosElectos = new JMenuItem("Delegados electos");
+		mntmDelegadosElectos.setIcon(new ImageIcon(HomePage.class.getResource("/resources/icons8_Add_User_Male_16.png")));
+		mntmDelegadosElectos.setForeground(new Color(17, 24, 63));
+		mntmDelegadosElectos.setFont(new Font("Segoe UI Symbol", Font.BOLD, 14));
+		mntmDelegadosElectos.setBackground(new Color(238, 242, 236));
+		mnReportes.add(mntmDelegadosElectos);
+=======
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 	}
 }

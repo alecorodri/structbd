@@ -1,10 +1,10 @@
 package dto;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 public class PartDto {
 
-	private Date date;   //dentro de esa variable va fecha y hora	
+	private Timestamp date;   //dentro de esa variable va fecha y hora	
 	private int partID;
 	private int quanElect;
 	private int quanDeleted;
@@ -12,6 +12,17 @@ public class PartDto {
 	private int total;
 	private int processE;
 
+<<<<<<< HEAD
+	public PartDto(int i, int j, int k, int l, int m, int n, Timestamp timestamp) {
+		super();
+		this.date = timestamp;
+		this.partID = i;
+		this.quanElect = j;
+		this.quanDeleted = k;
+		this.quanAd = l;
+		this.total = m;
+		this.processE = n;
+=======
 	public PartDto() {
 		super();
 	}
@@ -25,6 +36,7 @@ public class PartDto {
 		this.quanAd = quanAd;
 		this.total = total;
 		this.processE = processE;
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 	}
 	public int getProcessE() {
 		return processE;
@@ -32,10 +44,10 @@ public class PartDto {
 	public void setProcessE(int processE) {
 		this.processE = processE;
 	}
-	public Date getDate() {
+	public Timestamp getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(Timestamp date) {
 		this.date = date;
 	}
 	public int getPartID() {

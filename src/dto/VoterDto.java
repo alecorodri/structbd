@@ -1,22 +1,30 @@
 package dto;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 public class VoterDto {
 	
 	private int numID;
 	private String namVot;
 	private String adressVot;
+<<<<<<< HEAD
+	private Timestamp birthdayVot;
+=======
 	private Date birthdayVot;
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 	private int cdr;
-	private boolean vote;
+	private int vote;
 	private String cause;
 
 	public VoterDto() {
 		super();
 	}
+<<<<<<< HEAD
+	public VoterDto(int numID, String namVot, Timestamp birthdayVot, String adressVot, int cdr, int vote, String cause) {
+=======
 	public VoterDto(int numID, String namVot, String adressVot,
 			Date birthdayVot, int cdr, boolean vote, String cause) {
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 		super();
 		this.numID = numID;
 		this.namVot = namVot;
@@ -32,10 +40,10 @@ public class VoterDto {
 	public void setCause(String cause) {
 		this.cause = cause;
 	}
-	public boolean isVote() {
+	public int getVote() {
 		return vote;
 	}
-	public void setVote(boolean vote) {
+	public void setVote(int vote) {
 		this.vote = vote;
 	}
 	public int getCdr() {
@@ -62,10 +70,17 @@ public class VoterDto {
 	public void setAdrVot(String adrVot) {
 		this.adressVot = adrVot;
 	}
+<<<<<<< HEAD
+	public Timestamp getDateVot() {
+		return birthdayVot;
+	}
+	public void setDateVot(Timestamp dateVot) {
+=======
 	public Date getDateVot() {
 		return birthdayVot;
 	}
 	public void setDateVot(Date dateVot) {
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 		this.birthdayVot = dateVot;
 	}
 }
