@@ -19,11 +19,8 @@ _Facultad de Ingenieria Informatica, CUJAE_
 
 ## Construido con 🛠️
 * Base de Datos - PostgresSQL
-<<<<<<< HEAD
 * Interfaz - JavaSwing
-=======
 * Interfaz - JavaSwin
->>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 * Code - Java
 
 
