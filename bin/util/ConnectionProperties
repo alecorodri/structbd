@@ -1,8 +1,15 @@
+<<<<<<< HEAD
+Host:localhost
+DataBase:ElectoralProcess
+User:postgres
+Password:123
+=======
 Host:localhost
 <<<<<<< HEAD
 DataBase:ElectoralProcess
 =======
 DataBase:ElectoralProcces
->>>>>>> ccd3b86de4b22e78085efd46995965aa69e96ff9
+>>>>>>> 1de9d82a65ccda5f15c3e4ce8db8ae324f1b1bda
 User:postgres
 Password:123
+>>>>>>> ccd3b86de4b22e78085efd46995965aa69e96ff9
