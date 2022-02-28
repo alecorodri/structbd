@@ -12,23 +12,20 @@ _Facultad de Ingenieria Informatica, CUJAE_
  * Interfaz ✅
 
 
-## Deploy
- * Cargar en PostgreSQL backup que se encuentra en src/backup/ElectoralProcess.backup
- * Ejecutar Login.java
- * Establecer la conexion con la BD en la pantalla de Conexion Manual
-
-
 ## Construido con 🛠️
 * Base de Datos - PostgresSQL
 * Interfaz - JavaSwing
 * Code - Java
 
 
+## Deploy
+ * Cargar en PostgreSQL backup que se encuentra en src/backup/ElectoralProcess.backup
+ * Ejecutar Login.java
+ * Establecer la conexion con la BD en la pantalla de Conexion Manual
+
+
 ## Autores ✒️
-
-
 * Alejandro Lopez Rodriguez - *Desarrollo y Diseño* - [alecorodri](https://github.com/alecorodri)
 * Carlos Daniel Tellez Perez - *Desarrollo y Diseño* - [carlosdtellez](https://github.com/carlosdtellez)
 
-Contribuyentes [contribuyentes](https://github.com/alecorodri/structbd/contributors)
 
