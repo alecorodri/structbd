@@ -27,5 +27,6 @@ _Facultad de Ingenieria Informatica, CUJAE_
 ## Autores ✒️
 * Alejandro Lopez Rodriguez - *Desarrollo y Diseño* - [alecorodri](https://github.com/alecorodri)
 * Carlos Daniel Tellez Perez - *Desarrollo y Diseño* - [carlosdtellez](https://github.com/carlosdtellez)
+* Monica Montoto Montane - *Jefe de proyecto, Desarrollo y Diseño* - [mnk44](https://github.com/mnk44)
 
 
